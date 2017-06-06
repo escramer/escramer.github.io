@@ -1,0 +1,1 @@
+ctx = document.getElementById('canvas');
