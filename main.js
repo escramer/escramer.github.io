@@ -9,5 +9,7 @@ function main() {
 }
 
 canvas = document.getElementById('myCanvas');
+canvas.width = consts.screenW;
+canvas.height = consts.screenH;
 ctx = canvas.getContext('2d');
 requestAnimationFrame(main);
