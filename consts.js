@@ -8,5 +8,6 @@ var consts = {
   paddleSpeed: 256,
   screenH: 256,
   screenW: 512,
-  color: 'white'
+  color: 'white',
+  countDown: 3
 }
