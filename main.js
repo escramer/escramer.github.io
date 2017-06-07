@@ -3,11 +3,23 @@ function Paddle(xVal) {
   ; //todo
 }
 
+/*
+  Create a ball at the origin.
+
+  If goRight is true, it should go
+  to the right; otherwise, it should
+  go to the left.
+*/
+function Ball(goRight) {
+  ; //todo
+}
+
 function World() {
-  // Reset the world to the countdown state
-  this._reset = function() {
-    //todo
+  // Set the state of the world to pause one second before serving.
+  this._reset = function(goRight) {
+    ; //todo
   }
+
   this.update = function() {
     ; //todo
   }
@@ -22,9 +34,14 @@ function World() {
     //todo
   }
 
+  // Go to the menu.
+  this._goToMenu = function() {
+    ; //todo
+  }
+
   this._opp_paddle = Paddle(consts.paddlePad);
   this._my_paddle = Paddle(canvas.width - consts.paddlePad);
-  this._reset();
+  this._goToMenu();
 }
 
 // Do initializations here.
