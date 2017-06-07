@@ -25,12 +25,20 @@ function World() {
   }
 
   this._drawMenu = function() {
+    var subTitle;
     ctx.textAlign = 'center';
     ctx.font = '40px sans-serif'
     ctx.fillText(consts.title, canvas.width/2, canvas.height/3);
     ctx.font = '20px sans-serif'
+    if (navigator.getGamepads()[0] === null) {
+      subTitle = "Connect a controller. If it's already plugged in, press a " +
+        "button or two.";
+    }
+    else {
+      subTitle = 'Press X to play.';
+    }
     ctx.fillText(
-      'Press X to play with yourself.',
+      subTitle,
       canvas.width/2, canvas.height/2
     );
   }
