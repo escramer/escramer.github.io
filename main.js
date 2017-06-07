@@ -34,14 +34,7 @@ function World() {
     //todo
   }
 
-  // Go to the menu.
-  this._goToMenu = function() {
-    ; //todo
-  }
-
-  this._opp_paddle = Paddle(consts.paddlePad);
-  this._my_paddle = Paddle(canvas.width - consts.paddlePad);
-  this._goToMenu();
+  this._state = 'menu';
 }
 
 // Do initializations here.
