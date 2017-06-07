@@ -24,6 +24,17 @@ function World() {
     ; //todo
   }
 
+  this._drawMenu = function() {
+    ctx.textAlign = 'center';
+    ctx.font = '40px sans-serif'
+    ctx.fillText(consts.title, canvas.width/2, canvas.height/3);
+    ctx.font = '20px sans-serif'
+    ctx.fillText(
+      'Press X to play with yourself.',
+      canvas.width/2, canvas.height/2
+    );
+  }
+
   this.draw = function() {
     // Clear the screen
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -31,6 +42,9 @@ function World() {
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     ctx.fillStyle = consts.color;
 
+    if (this._state === 'menu') {
+      this._drawMenu();
+    }
     //todo
   }
 
