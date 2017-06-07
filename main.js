@@ -27,9 +27,9 @@ function World() {
   this.draw = function() {
     // Clear the screen
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle('rgb(0,0,0)');
+    ctx.fillStyle = 'rgb(0,0,0)';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle(consts.color);
+    ctx.fillStyle = consts.color;
 
     //todo
   }
@@ -45,7 +45,7 @@ function init() {
   canvas.height = consts.screenH;
   window.canvas = canvas;
   window.ctx = canvas.getContext('2d');
-  window.world = World();
+  window.world = new World();
 }
 
 // Update the state of the world, draw it, and repeat.
