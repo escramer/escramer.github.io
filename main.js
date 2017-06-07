@@ -4,7 +4,13 @@ function World() {
   }
 
   this.draw = function() {
-    ; //todo
+    // Clear the screen
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle('rgb(0,0,0)');
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle(consts.color);
+
+    //todo
   }
 }
 
