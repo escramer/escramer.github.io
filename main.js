@@ -8,8 +8,8 @@ function main() {
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 }
 
-canvas = document.getElementById('myCanvas');
+var canvas = document.getElementById('myCanvas');
+var ctx = canvas.getContext('2d');
 canvas.width = consts.screenW;
 canvas.height = consts.screenH;
-ctx = canvas.getContext('2d');
 requestAnimationFrame(main);
