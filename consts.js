@@ -6,8 +6,8 @@ var consts = {
   paddleH: 28,
   paddlePad: 10, // Distance from edge
   paddleSpeed: 256,
-  screenH: 256,
-  screenW: 512,
+  screenH: 500,
+  screenW: 1000,
   color: 'white',
-  countDown: 3
+  title: 'PONG MEETS PONG'
 }
