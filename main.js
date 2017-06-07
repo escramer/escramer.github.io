@@ -1,4 +1,13 @@
+// Create a paddle at this x value.
+function Paddle(xVal) {
+  ; //todo
+}
+
 function World() {
+  // Reset the world to the countdown state
+  this._reset = function() {
+    //todo
+  }
   this.update = function() {
     ; //todo
   }
@@ -12,6 +21,10 @@ function World() {
 
     //todo
   }
+
+  this._opp_paddle = Paddle(consts.paddlePad);
+  this._my_paddle = Paddle(canvas.width - consts.paddlePad);
+  this._reset();
 }
 
 // Do initializations here.
