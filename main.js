@@ -78,5 +78,9 @@ function mainLoop() {
   world.draw();
 }
 
-init();
-requestAnimationFrame(mainLoop);
+function main() {
+  init();
+  requestAnimationFrame(mainLoop);
+}
+
+main();
