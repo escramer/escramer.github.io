@@ -24,6 +24,7 @@ function World() {
     ; //todo
   }
 
+  // Draw the menu.
   this._drawMenu = function() {
     var subTitle;
     ctx.textAlign = 'center';
