@@ -3,6 +3,12 @@ function Paddle(xVal) {
   ; //todo
 }
 
+
+// Return whether or not the button index is pressed.
+function isPressed(button) {
+  return navigator.getGamepads()[0].buttons[button].pressed;
+}
+
 /*
   Create a ball at the origin.
 
@@ -21,7 +27,13 @@ function World() {
   }
 
   this.update = function() {
-    ; //todo
+    if (this._state === 'menu') {
+      if (isPressed(ps4.X)) {
+        this._state = 'btnGames';
+        this._myScore = 0;
+        this._oppScore = 0;
+      }
+    }
   }
 
   // Draw the menu.
@@ -54,6 +66,7 @@ function World() {
     if (this._state === 'menu') {
       this._drawMenu();
     }
+
     //todo
   }
 
