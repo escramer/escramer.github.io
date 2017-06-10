@@ -30,10 +30,6 @@ function Ball(goRight) {
 
 function World() {
   this.update = function() {
-    if (this._state === 'menu') {
-      ;//todo
-    }
-
     //todo
   }
 
@@ -117,6 +113,13 @@ function init() {
   window.canvas = canvas;
   window.ctx = canvas.getContext('2d');
   window.world = new World();
+  window.keyboard = new Set(); // Set of keys that are down
+  document.onkeydown = function(event) {
+    keyboard.add(event.key);
+  }
+  document.onkeyup = function(event) {
+    keyboard.delete(event.key);
+  }
 }
 
 // Update the state of the world, draw it, and repeat.
