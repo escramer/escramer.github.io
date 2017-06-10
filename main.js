@@ -1,4 +1,4 @@
-// Create a paddle at this x value.
+// Create a paddle at this x value. This is the left edge.
 function Paddle(xVal) {
   ; //todo
 }
