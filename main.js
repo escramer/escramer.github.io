@@ -1,5 +1,8 @@
-// Create a paddle at this x value. This is the left edge.
-function Paddle(xVal) {
+/* Create a paddle.
+
+isLeft is whether or not this is the left paddle.
+*/
+function Paddle(isLeft) {
   ; //todo
 }
 
