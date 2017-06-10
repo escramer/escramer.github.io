@@ -28,6 +28,8 @@ function World() {
         this._resetScore();
       }
     }
+
+    //todo
   }
 
   // Set the state to be between games (the score is not reset).
