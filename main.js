@@ -3,7 +3,12 @@
 isLeft is whether or not this is the left paddle.
 */
 function Paddle(isLeft) {
-  ; //todo
+  // Draw the paddle.
+  this.draw = function() {
+    ;//todo
+  }
+
+  //todo
 }
 
 
@@ -20,7 +25,12 @@ function isPressed(button) {
   go to the left.
 */
 function Ball(goRight) {
-  ; //todo
+  // Draw the ball.
+  this.draw = function() {
+    ;//todo
+  }
+
+  //todo
 }
 
 function World() {
@@ -67,16 +77,22 @@ function World() {
     );
   }
 
+  // Draw the scores.
+  this._drawScores = function() {
+    ;//todo
+  }
+
+  // Draw the dashed line in the middle.
+  this._drawDash = function() {
+    ;//todo
+  }
+
   // Draw the game without the ball.
   this._drawGameNoBall = function() {
     this._drawScores();
     this._drawDash();
-    this._drawPaddles();
-  }
-
-  // Draw the ball.
-  this._drawBall = function() {
-    ;//todo
+    this._myPaddle.draw();
+    this._oppPaddle.draw();
   }
 
   this.draw = function() {
@@ -94,7 +110,7 @@ function World() {
     }
     else { # game
       this._drawGameNoBall();
-      this._drawBall();
+      this._ball.draw();
     }
   }
 
