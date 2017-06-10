@@ -30,6 +30,13 @@ function Ball(goRight) {
 
 function World() {
   this.update = function() {
+    if (this._state === 'menu') {
+      if (keyboard.has(' ')) {
+        this._resetScore();
+        this._setBtnGames();
+      }
+    }
+
     //todo
   }
 
