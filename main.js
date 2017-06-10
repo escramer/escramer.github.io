@@ -67,6 +67,18 @@ function World() {
     );
   }
 
+  // Draw the game without the ball.
+  this._drawGameNoBall = function() {
+    this._drawScores();
+    this._drawDash();
+    this._drawPaddles();
+  }
+
+  // Draw the ball.
+  this._drawBall = function() {
+    ;//todo
+  }
+
   this.draw = function() {
     // Clear the screen
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -77,8 +89,13 @@ function World() {
     if (this._state === 'menu') {
       this._drawMenu();
     }
-
-    //todo
+    else if (this._state === 'btnGames') {
+      this._drawGameNoBall();
+    }
+    else { # game
+      this._drawGameNoBall();
+      this._drawBall();
+    }
   }
 
   this._state = 'menu';
