@@ -12,18 +12,6 @@ function Paddle(isLeft) {
 }
 
 
-// Return the gamepad (null if no gamepad).
-function getGP() {
-  return navigator.getGamepads()[0];
-}
-
-
-// Return whether or not the button index is pressed.
-function isPressed(button) {
-  var gamepad = getGP();
-  return gamepad !== null && gamepad.buttons[button].pressed;
-}
-
 /*
   Create a ball at the origin.
 
@@ -43,10 +31,7 @@ function Ball(goRight) {
 function World() {
   this.update = function() {
     if (this._state === 'menu') {
-      if (isPressed(ps4.X)) {
-        this._setBtnGames();
-        this._resetScore();
-      }
+      ;//todo
     }
 
     //todo
@@ -66,20 +51,12 @@ function World() {
 
   // Draw the menu.
   this._drawMenu = function() {
-    var subTitle;
     ctx.textAlign = 'center';
-    ctx.font = '40px sans-serif'
+    ctx.font = '40px sans-serif';
     ctx.fillText(consts.title, canvas.width/2, canvas.height/3);
-    ctx.font = '20px sans-serif'
-    if (navigator.getGamepads()[0] === null) {
-      subTitle = "Connect a controller. If it's already plugged in, press a " +
-        "button or two.";
-    }
-    else {
-      subTitle = 'Press X to play.';
-    }
+    ctx.font = '20px sans-serif';
     ctx.fillText(
-      subTitle,
+      'Press the space bar to play.',
       canvas.width/2, canvas.height/2
     );
   }
