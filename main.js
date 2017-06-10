@@ -91,7 +91,12 @@ function World() {
 
   // Draw the dashed line in the middle.
   this._drawDash = function() {
-    ;//todo
+    ctx.setLineDash([20, 5]);
+    ctx.beginPath();
+    ctx.moveTo(conv.halfWidth, 0);
+    ctx.lineTo(conv.halfWidth, canvas.height);
+    ctx.stroke();
+    ctx.closePath();
   }
 
   // Draw the game without the ball.
