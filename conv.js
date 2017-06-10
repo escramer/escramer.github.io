@@ -1,3 +1,3 @@
 var conv = {
-  halfWidth: canvas.width / 2
+  halfWidth: consts.screenW / 2
 }
