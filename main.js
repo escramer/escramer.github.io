@@ -21,19 +21,25 @@ function Ball(goRight) {
 }
 
 function World() {
-  // Set the state of the world to pause one second before serving.
-  this._reset = function(goRight) {
-    ; //todo
-  }
-
   this.update = function() {
     if (this._state === 'menu') {
       if (isPressed(ps4.X)) {
-        this._state = 'btnGames';
-        this._myScore = 0;
-        this._oppScore = 0;
+        this._setBtnGames();
+        this._resetScore();
       }
     }
+  }
+
+  // Set the state to be between games (the score is not reset).
+  this._setBtnGames = function() {
+    this._state = 'btnGames';
+    this._countdown = 1;
+  }
+
+  // Reset the score.
+  this._resetScore = function() {
+    this._myScore = 0;
+    this._oppScore = 0;
   }
 
   // Draw the menu.
