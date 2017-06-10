@@ -12,9 +12,16 @@ function Paddle(isLeft) {
 }
 
 
+// Return the gamepad (null if no gamepad).
+function getGP() {
+  return navigator.getGamepads()[0];
+}
+
+
 // Return whether or not the button index is pressed.
 function isPressed(button) {
-  return navigator.getGamepads()[0].buttons[button].pressed;
+  var gamepad = getGP();
+  return gamepad !== null && gamepad.buttons[button].pressed;
 }
 
 /*
