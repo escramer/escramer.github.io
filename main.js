@@ -82,6 +82,8 @@ function World() {
   }
 
   this._state = 'menu';
+  this._myPaddle = new Paddle(false);
+  this._oppPaddle = new Paddle(true);
 }
 
 // Do initializations here.
