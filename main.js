@@ -108,7 +108,7 @@ function World() {
     else if (this._state === 'btnGames') {
       this._drawGameNoBall();
     }
-    else { # game
+    else { // game
       this._drawGameNoBall();
       this._ball.draw();
     }
