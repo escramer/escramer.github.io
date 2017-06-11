@@ -141,6 +141,7 @@ function World() {
         this._setBtnGames();
       }
     }
+
     else if (this._state == 'btnGames') {
       this._countdown -= dt;
       this._updatePaddles();
@@ -149,7 +150,8 @@ function World() {
         this._state = 'game';
       }
     }
-    else { // game
+
+    else if (this._state == 'game') { // game
       this._updatePaddles();
       this._ball.update(dt);
       //todo: Have the ball bounce against the paddle.
@@ -165,6 +167,10 @@ function World() {
       }
 
       //todo: Check for a winner
+    }
+
+    else { // gameOver
+      ;//todo
     }
   }
 
