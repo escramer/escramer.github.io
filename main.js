@@ -101,7 +101,11 @@ function World() {
 
   // Draw the scores.
   this._drawScores = function() {
-    ;//todo
+    var yVal = 80;
+    var deltaX = 100;
+    ctx.font = '80px sans-serif';
+    ctx.fillText(this._myScore.toString(), conv.halfWidth + deltaX, yVal);
+    ctx.fillText(this._oppScore.toString(), conv.halfWidth - deltaX, yVal);
   }
 
   // Draw the dashed line in the middle.
