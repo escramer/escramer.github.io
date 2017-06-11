@@ -71,12 +71,12 @@ function World() {
 
   // Draw the dashed line in the middle.
   this._drawDash = function() {
-    ctx.setLineDash([20, 5]);
+    ctx.lineWidth = 5;
+    ctx.setLineDash([50, 10]);
     ctx.beginPath();
     ctx.moveTo(conv.halfWidth, 0);
     ctx.lineTo(conv.halfWidth, canvas.height);
     ctx.stroke();
-    ctx.closePath();
   }
 
   // Draw the game without the ball.
@@ -93,6 +93,7 @@ function World() {
     ctx.fillStyle = 'rgb(0,0,0)';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     ctx.fillStyle = consts.color;
+    ctx.strokeStyle = consts.color;
 
     if (this._state === 'menu') {
       this._drawMenu();
