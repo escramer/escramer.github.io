@@ -2,9 +2,9 @@ var consts = {
   ballSpeed: 500,
   ballR: 10,
   maxBallAngle: 75 * Math.PI / 180,
-  paddleW: 2,
-  paddleH: 28,
-  paddlePad: 10, // Distance from edge
+  paddleW: 20,
+  paddleH: 100,
+  paddlePad: 30, // Distance from edge
   paddleSpeed: 256,
   screenH: 600,
   screenW: 800,
