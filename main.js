@@ -22,10 +22,16 @@ function Paddle(isLeft) {
 function Ball(goRight) {
   // Draw the ball.
   this.draw = function() {
-    ctx.fillRect(50, 50, 50, 50); //todo
+    ctx.fillRect(
+      this._x - consts.ballR, this._y - consts.ballR, conv.ballDiam,
+      conv.ballDiam
+    );
   }
 
-  //todo
+  this._x = conv.halfWidth;
+  this._y = conv.halfHeight;
+  this._vx = goRight ? consts.ballSpeed : -consts.ballSpeed;
+  this._vy = 0;
 }
 
 
