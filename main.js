@@ -151,7 +151,8 @@ function World() {
 
   // Update the paddles.
   this._updatePaddles = function() {
-    ;//todo
+    // My paddle
+    ;
   }
 
   // Set the state to be between games (the score is not reset).

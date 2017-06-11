@@ -9,5 +9,7 @@ var consts = {
   screenH: 600,
   screenW: 800,
   color: 'white',
-  title: 'PONG MEETS PONG'
+  title: 'PONG MEETS PONG',
+  upKey: 'k',
+  downKey: 'm'
 }
