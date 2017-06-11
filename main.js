@@ -32,7 +32,7 @@ function Ball(goRight) {
 // Keep track of dt
 function DTTracker() {
   // Set the time.
-  this.setTime = function(timestamp) {
+  this.setTS = function(timestamp) {
     if (this._timestamp === undefined) {
       this._timestamp = timestamp;
       this._dt = 0;
@@ -44,15 +44,20 @@ function DTTracker() {
   }
 
   // Get the time between the current timestamp and the previous one.
-  get dt() {
+  this.getDT = function() {
     return this._timestamp === undefined ? 0 : this._dt;
+  }
+
+  // Get the current time. This will return undefined if no timestamp was set.
+  this.getTS = function() {
+    return this._timestamp;
   }
 }
 
 function World() {
   this.update = function(timestamp) {
-    this._dtTracker.setTime(timestamp);
-    
+    this._dtTracker.setTS(timestamp);
+
     if (this._state === 'menu') {
       if (keyboard.has(' ')) {
         this._resetScore();
