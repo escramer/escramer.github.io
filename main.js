@@ -158,7 +158,7 @@ function World() {
 
       ballX = this._ball.getX();
       if (ballX >= consts.screenW) {
-        if (++this.oppScore === consts.winningScore) {
+        if (++this._oppScore === consts.winningScore) {
           this._state = 'gameOver';
         }
         else {
