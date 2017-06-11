@@ -18,10 +18,10 @@ function Paddle(isLeft) {
       return;
     }
 
-    if (dir === 'up' && this._y < conv.paddleMaxY) {
+    if (dir === 'down' && this._y < conv.paddleMaxY) {
       this._y = Math.min(this._y + consts.paddleSpeed * dt, conv.paddleMaxY);
     }
-    else if (dir === 'down' && this._y > 0) {
+    else if (dir === 'up' && this._y > 0) {
       this._y = Math.max(this._y - consts.paddleSpeed * dt, 0);
     }
   }
