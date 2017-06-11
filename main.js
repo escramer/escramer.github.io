@@ -131,6 +131,7 @@ function DTTracker() {
 function World() {
   this.update = function(timestamp) {
     var dt;
+    var ballX;
     this._dtTracker.setTS(timestamp);
     dt = this._dtTracker.getDT();
 
@@ -152,6 +153,18 @@ function World() {
       this._updatePaddles();
       this._ball.update(dt);
       //todo: Have the ball bounce against the paddle.
+
+      ballX = this._ball.getX();
+      if (ballX >= consts.screenW) {
+        this._oppScore++;
+        this._setBtnGames();
+      }
+      else if (ballX <= 0) {
+        this._myScore++;
+        this._setBtnGames();
+      }
+
+      //todo: Check for a winner
     }
   }
 
