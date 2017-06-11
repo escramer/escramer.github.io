@@ -143,10 +143,15 @@ function World() {
       if (this._countdown <= 0) {
         this._ball = new Ball(this._serveToMe);
         this._state = 'game';
-        //todo: update paddles
+        this._updatePaddles();
       }
     }
     //todo
+  }
+
+  // Update the paddles.
+  this._updatePaddles = function() {
+    ;//todo
   }
 
   // Set the state to be between games (the score is not reset).
