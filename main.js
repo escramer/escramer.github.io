@@ -30,6 +30,7 @@ function Paddle(isLeft) {
     return this._x;
   }
 
+  // Get the y value of the top edge.
   this.getY = function () {
     return this._y;
   }
@@ -85,10 +86,12 @@ function Ball(goRight) {
     }
   }
 
+  // Return the x value of the center of the ball.
   this.getX = function() {
     return this._x;
   }
 
+  // Return the y value of the center of the ball.
   this.getY = function() {
     return this._y;
   }
