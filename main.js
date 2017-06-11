@@ -8,7 +8,23 @@ function Paddle(isLeft) {
     ctx.fillRect(this._leftEdge, this._y, consts.paddleW, consts.paddleH);
   }
 
-  //todo: update the position
+  /* Update the position of this paddle.
+
+  dir is either 'up', 'down', or 'stop'.
+  dt is in seconds.
+  */
+  this.update = function(dir, dt) {
+    if (dir === 'stop') {
+      return;
+    }
+
+    if (dir === 'up' && this._y < conv.paddleMaxY) {
+      this._y = Math.min(this._y + consts.paddleSpeed * dt, conv.paddleMaxY);
+    }
+    else if (dir === 'down' && this._y > 0) {
+      this._y = Math.max(this._y - consts.paddleSpeed * dt, 0);
+    }
+  }
 
   // Set the y position to be its default.
   this.resetPos = function() {
@@ -68,9 +84,9 @@ function DTTracker() {
     }
   }
 
-  // Get the time between the current timestamp and the previous one.
+  // Get the time in seconds between the current timestamp and the previous one.
   this.getDT = function() {
-    return this._timestamp === undefined ? 0 : this._dt;
+    return this._timestamp === undefined ? 0 : this._dt / 1000;
   }
 
   // Get the current time. This will return undefined if no timestamp was set.
@@ -90,7 +106,7 @@ function World() {
       }
     }
     else if (this._state == 'btnGames') {
-      this._countdown -= this._dtTracker.getDT() / 1000;
+      this._countdown -= this._dtTracker.getDT();
       if (this._countdown <= 0) {
         this._ball = new Ball(this._serveToMe);
         this._state = 'game';
