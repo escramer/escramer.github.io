@@ -226,7 +226,8 @@ function World() {
     ctx.fillText(consts.title, canvas.width/2, canvas.height/3);
     ctx.font = '20px sans-serif';
     ctx.fillText(
-      'Press the space bar to play.',
+      'Press the space bar to play. Use ' + consts.up + ' and ' +
+      consts.down + ' to move the paddle.',
       canvas.width/2, canvas.height/2
     );
   }
