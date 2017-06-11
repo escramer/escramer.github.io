@@ -28,8 +28,31 @@ function Ball(goRight) {
   //todo
 }
 
+
+// Keep track of dt
+function DTTracker() {
+  // Set the time.
+  this.setTime = function(timestamp) {
+    if (this._timestamp === undefined) {
+      this._timestamp = timestamp;
+      this._dt = 0;
+    }
+    else {
+      this._dt = timestamp - this._timestamp;
+      this._timestamp = timestamp
+    }
+  }
+
+  // Get the time between the current timestamp and the previous one.
+  get dt() {
+    return this._timestamp === undefined ? 0 : this._dt;
+  }
+}
+
 function World() {
-  this.update = function() {
+  this.update = function(timestamp) {
+    this._dtTracker.setTime(timestamp);
+    
     if (this._state === 'menu') {
       if (keyboard.has(' ')) {
         this._resetScore();
@@ -110,6 +133,7 @@ function World() {
   this._state = 'menu';
   this._myPaddle = new Paddle(false);
   this._oppPaddle = new Paddle(true);
+  this._dtTracker = new DTTracker();
 }
 
 // Do initializations here.
@@ -131,9 +155,9 @@ function init() {
 }
 
 // Update the state of the world, draw it, and repeat.
-function mainLoop() {
+function mainLoop(timestamp) {
   requestAnimationFrame(mainLoop);
-  world.update();
+  world.update(timestamp);
   world.draw();
 }
 
