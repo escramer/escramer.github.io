@@ -22,7 +22,7 @@ function Paddle(isLeft) {
 function Ball(goRight) {
   // Draw the ball.
   this.draw = function() {
-    ;//todo
+    ctx.fillRect(50, 50, 50, 50); //todo
   }
 
   //todo
@@ -107,7 +107,7 @@ function World() {
   // Draw the dashed line in the middle.
   this._drawDash = function() {
     ctx.lineWidth = 5;
-    ctx.setLineDash([50, 10]);
+    ctx.setLineDash([15, 15]);
     ctx.beginPath();
     ctx.moveTo(conv.halfWidth, 0);
     ctx.lineTo(conv.halfWidth, canvas.height);
