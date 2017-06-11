@@ -140,10 +140,10 @@ function World() {
     }
     else if (this._state == 'btnGames') {
       this._countdown -= this._dtTracker.getDT();
+      this._updatePaddles();
       if (this._countdown <= 0) {
         this._ball = new Ball(this._serveToMe);
         this._state = 'game';
-        this._updatePaddles();
       }
     }
     //todo
