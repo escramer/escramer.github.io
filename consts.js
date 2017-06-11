@@ -10,6 +10,7 @@ var consts = {
   screenW: 800,
   color: 'white',
   title: 'PONG MEETS PONG',
+  winningScore: 10,
   up: 'k',
   down: 'm'
 }
