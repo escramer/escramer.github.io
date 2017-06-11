@@ -85,6 +85,14 @@ function Ball(goRight) {
     }
   }
 
+  this.getX = function() {
+    return this._x;
+  }
+
+  this.getY = function() {
+    return this._y;
+  }
+
   this._x = conv.halfWidth;
   this._y = conv.halfHeight;
   this._vx = goRight ? consts.ballSpeed : -consts.ballSpeed;
