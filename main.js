@@ -68,7 +68,7 @@ function World() {
       this._countdown -= this._dtTracker.getDT() / 1000;
       if (this._countdown <= 0) {
         this._ball = new Ball(this._serveToMe);
-        this._state = 'play';
+        this._state = 'game';
         //todo: update paddles
       }
     }
