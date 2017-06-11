@@ -26,6 +26,14 @@ function Paddle(isLeft) {
     }
   }
 
+  this.getX = function() {
+    return this._x;
+  }
+
+  this.getY = function () {
+    return this._y;
+  }
+
   // Set the y position to be its default.
   this.resetPos = function() {
     // this._y represents the upper edge.
