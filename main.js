@@ -158,15 +158,21 @@ function World() {
 
       ballX = this._ball.getX();
       if (ballX >= consts.screenW) {
-        this._oppScore++;
-        this._setBtnGames();
+        if (++this.oppScore === consts.winningScore) {
+          this._state = 'gameOver';
+        }
+        else {
+          this._setBtnGames();
+        }
       }
       else if (ballX <= 0) {
-        this._myScore++;
-        this._setBtnGames();
+        if (++this._myScore === consts.winningScore) {
+          this._state = 'gameOver';
+        }
+        else {
+          this._setBtnGames();
+        }
       }
-
-      //todo: Check for a winner
     }
 
     else { // gameOver
