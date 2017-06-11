@@ -5,10 +5,29 @@ isLeft is whether or not this is the left paddle.
 function Paddle(isLeft) {
   // Draw the paddle.
   this.draw = function() {
-    ;//todo
+    ctx.fillRect(this._leftEdge, this._y, consts.paddleW, consts.paddleH);
   }
 
-  //todo
+  //todo: update the position
+
+  // Set the y position to be its default.
+  this.resetPos = function() {
+    // this._y represents the upper edge.
+    this._y = conv.halfHeight - consts.paddleH / 2;
+  }
+
+  if (isLeft) {
+    this._leftEdge = consts.paddlePad;
+    this._rightEdge = consts.paddlePad + consts.paddleW;
+    this._x = this._rightEdge; // Represents the edge used in ball collisions
+  }
+  else {
+    this._rightEdge = consts.screenW - consts.paddlePad;
+    this._leftEdge = this._rightEdge - consts.paddleW;
+    this._x = this._leftEdge;
+  }
+  this._isLeft = isLeft;
+  this.resetPos();
 }
 
 
