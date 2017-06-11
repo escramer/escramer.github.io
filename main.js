@@ -130,7 +130,9 @@ function DTTracker() {
 
 function World() {
   this.update = function(timestamp) {
+    var dt;
     this._dtTracker.setTS(timestamp);
+    dt = this._dtTracker.getDT();
 
     if (this._state === 'menu') {
       if (keyboard.has(' ')) {
@@ -139,14 +141,18 @@ function World() {
       }
     }
     else if (this._state == 'btnGames') {
-      this._countdown -= this._dtTracker.getDT();
+      this._countdown -= dt;
       this._updatePaddles();
       if (this._countdown <= 0) {
         this._ball = new Ball(this._serveToMe);
         this._state = 'game';
       }
     }
-    //todo
+    else { // game
+      this._updatePaddles();
+      this._ball.update(dt);
+      //todo: Have the ball bounce against the paddle.
+    }
   }
 
   // Update the paddles.
