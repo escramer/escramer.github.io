@@ -64,7 +64,14 @@ function World() {
         this._setBtnGames();
       }
     }
-
+    else if (this._state == 'btnGames') {
+      this._countdown -= this._dtTracker.getDT() / 1000;
+      if (this._countdown <= 0) {
+        this._ball = new Ball(this._serveToMe);
+        this._state = 'play';
+        //todo: update paddles
+      }
+    }
     //todo
   }
 
