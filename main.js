@@ -152,7 +152,20 @@ function World() {
   // Update the paddles.
   this._updatePaddles = function() {
     // My paddle
-    ;
+    var dir;
+    var dt = this._dtTracker.getDT();
+    if (keyboard.has(consts.up) && !keyboard.has(consts.down)) {
+      dir = 'up';
+    }
+    else if (keyboard.has(consts.down) && !keyboard.has(consts.up)) {
+      dir = 'down';
+    }
+    else {
+      dir = 'stop';
+    }
+    this._myPaddle.update(dir, dt);
+
+    //todo: Opponent paddle
   }
 
   // Set the state to be between games (the score is not reset).
