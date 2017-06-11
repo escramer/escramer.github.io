@@ -71,6 +71,20 @@ function Ball(goRight) {
     );
   }
 
+  /* Update the ball as if the paddles did not exist.
+
+  dt is in seconds.
+  */
+  this.update = function(dt) {
+    this._x += this._vx * dt;
+    this._y += this._vy * dt;
+    if (
+      this._y <= 0 && this._vy < 0 || this._y >= consts.screenH && this._vy > 0
+    ) {
+      this._vy *= -1;
+    }
+  }
+
   this._x = conv.halfWidth;
   this._y = conv.halfHeight;
   this._vx = goRight ? consts.ballSpeed : -consts.ballSpeed;
