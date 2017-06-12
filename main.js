@@ -187,6 +187,12 @@ function World() {
     }
   }
 
+  // Reset to a new game (by first going between games).
+  this._newGame = function() {
+    this._resetScores();
+    this._setBtnGames(true);
+  }
+
   // Update the paddles.
   this._updatePaddles = function() {
     this._updateMyPaddle();
