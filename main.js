@@ -291,9 +291,12 @@ function World() {
     else if (this._state === 'btnGames') {
       this._drawGameNoBall();
     }
-    else { // game
+    else if (this._state === 'game') {
       this._drawGameNoBall();
       this._ball.draw();
+    }
+    else { // gameOver
+      ; //todo
     }
   }
 
