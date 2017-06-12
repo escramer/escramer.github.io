@@ -145,8 +145,7 @@ function World() {
 
     if (this._state === 'menu') {
       if (keyboard.has(' ')) {
-        this._resetScore();
-        this._setBtnGames();
+        this._newGame();
       }
     }
 
@@ -169,7 +168,7 @@ function World() {
           this._state = 'gameOver';
         }
         else {
-          this._setBtnGames();
+          this._setBtnGames(false);
         }
       }
       else if (ballX <= 0) {
@@ -177,7 +176,7 @@ function World() {
           this._state = 'gameOver';
         }
         else {
-          this._setBtnGames();
+          this._setBtnGames(true);
         }
       }
     }
