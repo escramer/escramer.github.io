@@ -96,10 +96,18 @@ function Ball(goRight) {
     return this._y;
   }
 
-  this._x = conv.halfWidth;
-  this._y = conv.halfHeight;
-  this._vx = goRight ? consts.ballSpeed : -consts.ballSpeed;
-  this._vy = 0;
+  /* Reset position and velocity.
+
+  goRight is whether or not the ball should go to the right at the beginning.
+  */
+  this.reset = function() {}
+    this._x = conv.halfWidth;
+    this._y = conv.halfHeight;
+    this._vx = goRight ? consts.ballSpeed : -consts.ballSpeed;
+    this._vy = 0;
+  }
+
+  this.reset();
 }
 
 
