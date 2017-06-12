@@ -214,10 +214,14 @@ function World() {
     this._myPaddle.update(dir, dt);
   }
 
-  // Set the state to be between games (the score is not reset).
-  this._setBtnGames = function() {
+  /* Set the state to be between games (the score is not reset).
+
+  goRight is whether the ball should be served to the right.
+  */
+  this._setBtnGames = function(goRight) {
     this._state = 'btnGames';
     this._countdown = 1;
+    this._ball.reset(goRight);
   }
 
   // Reset the score.
