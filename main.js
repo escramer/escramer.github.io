@@ -100,14 +100,14 @@ function Ball(goRight) {
 
   goRight is whether or not the ball should go to the right at the beginning.
   */
-  this.reset = function() {}
+  this.reset = function(goRight) {}
     this._x = conv.halfWidth;
     this._y = conv.halfHeight;
     this._vx = goRight ? consts.ballSpeed : -consts.ballSpeed;
     this._vy = 0;
   }
 
-  this.reset();
+  this.reset(goRight);
 }
 
 
