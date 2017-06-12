@@ -182,7 +182,9 @@ function World() {
     }
 
     else { // gameOver
-      ;//todo
+      if (keyboard.has(' ')) {
+        this._newGame();
+      }
     }
   }
 
