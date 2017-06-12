@@ -291,7 +291,7 @@ function World() {
   this._myPaddle = new Paddle(false);
   this._oppPaddle = new Paddle(true);
   this._dtTracker = new DTTracker();
-  this._serveToMe = true;
+  this._ball = new Ball(true);
 }
 
 // Do initializations here.
