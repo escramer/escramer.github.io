@@ -109,6 +109,11 @@ function Ball(goRight) {
     return this._vy;
   }
 
+  // Return whether or not the ball is hitting this paddle.
+  this._isHittingPaddle = function(paddle) {
+    return false; //todo
+  }
+
   /* Reset position and velocity.
 
   goRight is whether or not the ball should go to the right at the beginning.
