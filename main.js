@@ -190,6 +190,7 @@ function World() {
     }
 
     else { // gameOver
+      this._updatePaddles();
       if (keyboard.has(' ')) {
         this._newGame();
       }
