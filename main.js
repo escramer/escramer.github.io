@@ -285,8 +285,8 @@ function World() {
     this._oppPaddle.draw();
   }
 
-  // Draw the win screen.
-  this._drawWinScreen = function() {
+  // Draw the win messages.
+  this._drawWinMessages = function() {
     var xVal = this._myScore === consts.winningScore ? .75 * consts.screenW :
      .25 * consts.screenW;
     ctx.font = '80px sans-serif';
@@ -312,7 +312,8 @@ function World() {
       this._ball.draw();
     }
     else { // gameOver
-      this._drawWinScreen();
+      this._drawGameNoBall();
+      this._drawWinMessages();
     }
   }
 
