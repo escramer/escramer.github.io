@@ -239,8 +239,8 @@ function World() {
     this._ball.reset(goRight);
   }
 
-  // Reset the score.
-  this._resetScore = function() {
+  // Reset the scores.
+  this._resetScores = function() {
     this._myScore = 0;
     this._oppScore = 0;
   }
