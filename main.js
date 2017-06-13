@@ -96,6 +96,14 @@ function Ball(goRight) {
     return this._y;
   }
 
+  this.getVX = function() {
+    return this._vx;
+  }
+
+  this.getVY = function() {
+    return this._vy;
+  }
+
   /* Reset position and velocity.
 
   goRight is whether or not the ball should go to the right at the beginning.
