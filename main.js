@@ -118,7 +118,7 @@ function Ball(goRight) {
      i.e. return (ballY - <center of paddle>) / (half paddle height)
   */
   this._relY = function(paddle) {
-    return 0; //todo
+    return (this._y - (paddle.getY() + conv.halfPaddleH)) / conv.halfPaddleH;
   }
 
   // Return whether or not the ball is hitting this paddle.
