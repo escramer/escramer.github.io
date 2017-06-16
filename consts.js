@@ -1,7 +1,7 @@
 var consts = {
   ballSpeed: 700,
   ballR: 10,
-  maxBallAngle: 75 * Math.PI / 180,
+  maxBallAngle: 60 * Math.PI / 180,
   paddleW: 20,
   paddleH: 100,
   paddlePad: 30, // Distance from edge
