@@ -63,12 +63,8 @@ function Paddle(isLeft) {
 
 /*
   Create a ball at the origin.
-
-  If goRight is true, it should go
-  to the right; otherwise, it should
-  go to the left.
 */
-function Ball(goRight) {
+function Ball() {
   // Draw the ball.
   this.draw = function() {
     ctx.fillRect(
@@ -143,14 +139,14 @@ function Ball(goRight) {
 
   goRight is whether or not the ball should go to the right at the beginning.
   */
-  this.reset = function(goRight) {
+  this.reset = function() {
     this._x = conv.halfWidth;
     this._y = conv.halfHeight;
-    this._vx = goRight ? consts.ballSpeed : -consts.ballSpeed;
+    this._vx = Math.random() > .5 ? consts.ballSpeed : -consts.ballSpeed;
     this._vy = 0;
   }
 
-  this.reset(goRight);
+  this.reset();
 }
 
 
@@ -212,7 +208,7 @@ function World() {
           this._state = 'gameOver';
         }
         else {
-          this._setBtnGames(false);
+          this._setBtnGames();
         }
       }
       else if (ballX <= 0) {
@@ -220,7 +216,7 @@ function World() {
           this._state = 'gameOver';
         }
         else {
-          this._setBtnGames(true);
+          this._setBtnGames();
         }
       }
     }
@@ -236,7 +232,7 @@ function World() {
   // Reset to a new game (by first going between games).
   this._newGame = function() {
     this._resetScores();
-    this._setBtnGames(true);
+    this._setBtnGames();
   }
 
   // Update the paddles.
@@ -266,14 +262,11 @@ function World() {
     this._myPaddle.update(dir, dt);
   }
 
-  /* Set the state to be between games (the score is not reset).
-
-  goRight is whether the ball should be served to the right.
-  */
-  this._setBtnGames = function(goRight) {
+  // Set the state to be between games (the score is not reset).
+  this._setBtnGames = function() {
     this._state = 'btnGames';
     this._countdown = 1;
-    this._ball.reset(goRight);
+    this._ball.reset();
   }
 
   // Reset the scores.
@@ -358,7 +351,7 @@ function World() {
   this._myPaddle = new Paddle(false);
   this._oppPaddle = new Paddle(true);
   this._dtTracker = new DTTracker();
-  this._ball = new Ball(true);
+  this._ball = new Ball();
 }
 
 // Do initializations here.
