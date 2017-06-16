@@ -5,7 +5,7 @@ var consts = {
   paddleW: 20,
   paddleH: 100,
   paddlePad: 30, // Distance from edge
-  paddleSpeed: 256,
+  paddleSpeed: 400,
   screenH: 600,
   screenW: 800,
   color: 'white',
