@@ -111,7 +111,19 @@ function Ball(goRight) {
 
   // Alter the velocity if the ball is hitting this paddle.
   this.bounce = function(paddle) {
-    ; //todo
+    var relY;
+    var angle;
+    if (this._isBeyondPaddlePlane(paddle)) {
+      relY = this._relY(paddle);
+      if (relY >= -1 && relY <= 1) {
+        angle = consts.maxBallAngle * relY;
+        if (!paddle.isLeft()) {
+          angle = Math.PI - angle;
+        }
+        this._vx = consts.ballSpeed * Math.cos(angle);
+        this._vy = consts.ballSpeed * Math.sin(angle);
+      }
+    }
   }
 
   // Return whether or not the ball is beyond the plane of the paddle.
