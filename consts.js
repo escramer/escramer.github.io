@@ -1,5 +1,5 @@
 var consts = {
-  ballSpeed: 500,
+  ballSpeed: 600,
   ballR: 10,
   maxBallAngle: 75 * Math.PI / 180,
   paddleW: 20,
