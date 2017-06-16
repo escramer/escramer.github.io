@@ -203,7 +203,8 @@ function World() {
     else if (this._state == 'game') { // game
       this._updatePaddles();
       this._ball.update(dt);
-      //todo: Have the ball bounce against the paddle.
+      this._ball.bounce(this._myPaddle);
+      this._ball.bounce(this._oppPaddle);
 
       ballX = this._ball.getX();
       if (ballX >= consts.screenW) {
