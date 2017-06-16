@@ -114,6 +114,13 @@ function Ball(goRight) {
     ; //todo
   }
 
+  /* Get the position of the ball relative to the center of this paddle.
+     i.e. return (ballY - <center of paddle>) / (half paddle height)
+  */
+  this._relY = function(paddle) {
+    return 0; //todo
+  }
+
   // Return whether or not the ball is hitting this paddle.
   this._isHittingPaddle = function(paddle) {
     var paddleX = paddle.getX();
