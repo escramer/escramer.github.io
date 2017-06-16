@@ -114,26 +114,17 @@ function Ball(goRight) {
     ; //todo
   }
 
+  // Return whether or not the ball is beyond the plane of the paddle.
+  this._isBeyondPaddlePlane = function(paddle) {
+    return paddle.isLeft() && this._x <= paddle.getX() && this._vx < 0 ||
+     !paddle.isLeft() && this._x >= paddle.getX() && this._vx > 0;
+  }
+
   /* Get the position of the ball relative to the center of this paddle.
      i.e. return (ballY - <center of paddle>) / (half paddle height)
   */
   this._relY = function(paddle) {
     return (this._y - (paddle.getY() + conv.halfPaddleH)) / conv.halfPaddleH;
-  }
-
-  // Return whether or not the ball is hitting this paddle.
-  this._isHittingPaddle = function(paddle) {
-    var paddleX = paddle.getX();
-    var paddleY = paddle.getY();
-
-    if (paddle.isLeft()) {
-      return this._x <= paddleX && this._vx < 0 && this._y >= paddleY &&
-        this._y <= paddleY + consts.paddleH;
-    }
-    else {
-      return this._x >= paddleX && this._vx > 0 && this._y >= paddleY &&
-        this._y <= paddleY + consts.paddleH;
-    }
   }
 
   /* Reset position and velocity.
