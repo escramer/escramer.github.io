@@ -109,6 +109,11 @@ function Ball(goRight) {
     return this._vy;
   }
 
+  // Alter the velocity if the ball is hitting this paddle.
+  this.bounce = function(paddle) {
+    ; //todo
+  }
+
   // Return whether or not the ball is hitting this paddle.
   this._isHittingPaddle = function(paddle) {
     var paddleX = paddle.getX();
