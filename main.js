@@ -111,7 +111,17 @@ function Ball(goRight) {
 
   // Return whether or not the ball is hitting this paddle.
   this._isHittingPaddle = function(paddle) {
-    return false; //todo
+    var paddleX = paddle.getX();
+    var paddleY = paddle.getY();
+
+    if (paddle.isLeft()) {
+      return this._x <= paddleX && this._vx < 0 && this._y >= paddleY &&
+        this._y <= paddleY + consts.paddleH;
+    }
+    else {
+      return this._x >= paddleX && this._vx > 0 && this._y >= paddleY &&
+        this._y <= paddleY + consts.paddleH;
+    }
   }
 
   /* Reset position and velocity.
