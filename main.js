@@ -208,6 +208,7 @@ function World() {
       this._updatePaddles();
       if (this._countdown <= 0) {
         this._state = 'game';
+        this._countdown = 0;
       }
     }
 
