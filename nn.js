@@ -20,4 +20,9 @@ function NeuralNetwork(numInputs, numOutputs, hiddenUnits=100) {
   this.predict = function(input) {
     return 0; //todo
   }
+
+  if (typof hiddenUnits === 'number') {
+    hiddenUnits = [hiddenUnits];
+  }
+  //todo
 }
