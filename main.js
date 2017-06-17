@@ -341,6 +341,17 @@ function World() {
     ;//todo
   }
 
+  // Get the keyboard direction.
+  this._getKBDir = function() {
+    if (keyboard.has(consts.up) && !keyboard.has(consts.down)) {
+      return UP;
+    }
+    else if (keyboard.has(consts.down) && !keyboard.has(consts.up)) {
+      return DOWN;
+    }
+    return STOP;
+  }
+
   // Update my paddle.
   this._updateMyPaddle = function() {
     var dir;
