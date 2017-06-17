@@ -1,3 +1,7 @@
+var STOP = 0;
+var UP = 1;
+var DOWN = 2;
+
 /* Create a paddle.
 
 isLeft is whether or not this is the left paddle.
@@ -10,7 +14,7 @@ function Paddle(isLeft) {
 
   /* Update the position of this paddle.
 
-  dir is either 'up', 'down', or 'stop'.
+  dir is either UP, DOWN, or STOP.
   dt is in seconds.
   */
   this.update = function(dir, dt) {
@@ -22,14 +26,14 @@ function Paddle(isLeft) {
       this._dirTime = dt;
     }
 
-    if (dir === 'stop') {
+    if (dir === STOP) {
       return;
     }
 
-    if (dir === 'down' && this._y < conv.paddleMaxY) {
+    if (dir === DOWN && this._y < conv.paddleMaxY) {
       this._y = Math.min(this._y + consts.paddleSpeed * dt, conv.paddleMaxY);
     }
-    else if (dir === 'up' && this._y > 0) {
+    else if (dir === UP && this._y > 0) {
       this._y = Math.max(this._y - consts.paddleSpeed * dt, 0);
     }
   }
@@ -75,7 +79,7 @@ function Paddle(isLeft) {
     this._x = this._leftEdge;
   }
   this._isLeft = isLeft;
-  this._crntDir = 'stop';
+  this._crntDir = STOP;
   this._dirTime = 0;
   this.resetPos();
 }
@@ -289,13 +293,13 @@ function World() {
     var dir;
     var dt = this._dtTracker.getDT();
     if (keyboard.has(consts.up) && !keyboard.has(consts.down)) {
-      dir = 'up';
+      dir = UP;
     }
     else if (keyboard.has(consts.down) && !keyboard.has(consts.up)) {
-      dir = 'down';
+      dir = DOWN;
     }
     else {
-      dir = 'stop';
+      dir = STOP;
     }
     this._myPaddle.update(dir, dt);
   }
