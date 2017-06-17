@@ -16,7 +16,7 @@ function NeuralNetwork(numInputs, numOutputs, hiddenUnits=100) {
     ;//todo
   }
 
-  // Return the output. input is a one-dimensional matrix.
+  // Predict the output. input is a one-dimensional matrix.
   this.predict = function(input) {
     return 0; //todo
   }
