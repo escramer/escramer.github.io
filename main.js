@@ -14,6 +14,8 @@ function Paddle(isLeft) {
   dt is in seconds.
   */
   this.update = function(dir, dt) {
+    this._prevDir = dir;
+
     if (dir === 'stop') {
       return;
     }
@@ -24,6 +26,11 @@ function Paddle(isLeft) {
     else if (dir === 'up' && this._y > 0) {
       this._y = Math.max(this._y - consts.paddleSpeed * dt, 0);
     }
+  }
+
+  // Return the previous direction ('stop', 'up', or 'down').
+  this.getPrevDir = function() {
+    return this._prevDir; //todo
   }
 
   this.getX = function() {
@@ -57,6 +64,7 @@ function Paddle(isLeft) {
     this._x = this._leftEdge;
   }
   this._isLeft = isLeft;
+  this._prevDir = 'stop';
   this.resetPos();
 }
 
