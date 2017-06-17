@@ -14,7 +14,13 @@ function Paddle(isLeft) {
   dt is in seconds.
   */
   this.update = function(dir, dt) {
-    this._crntDir = dir;
+    if (dir === this._crntDir) {
+      this._dirTime += dt;
+    }
+    else {
+      this._crntDir = dir;
+      this._dirTime = dt;
+    }
 
     if (dir === 'stop') {
       return;
@@ -31,6 +37,11 @@ function Paddle(isLeft) {
   // Return the current direction ('stop', 'up', or 'down').
   this.getCrntDir = function() {
     return this._crntDir;
+  }
+
+  // Return the amount of time spent in the current direction in seconds.
+  this.getTimeInDir = function() {
+    return this._dirTime;
   }
 
   this.getX = function() {
@@ -65,6 +76,7 @@ function Paddle(isLeft) {
   }
   this._isLeft = isLeft;
   this._crntDir = 'stop';
+  this._dirTime = 0;
   this.resetPos();
 }
 
