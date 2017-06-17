@@ -192,7 +192,9 @@ function DTTracker() {
     return this._timestamp === undefined ? 0 : this._dt / 1000;
   }
 
-  // Get the current time. This will return undefined if no timestamp was set.
+  /* Get the current time in milliseconds. This will return undefined if no
+  timestamp was set.
+  */
   this.getTS = function() {
     return this._timestamp;
   }
