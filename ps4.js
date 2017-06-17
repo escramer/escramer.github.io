@@ -1,3 +1,5 @@
+// PS4 functionality
+
 var ps4 = {
   X: 0,
   CIRCLE: 1,

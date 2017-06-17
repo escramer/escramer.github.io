@@ -1,3 +1,5 @@
+// Convenience variables
+
 var conv = {
   halfWidth: consts.screenW / 2,
   halfHeight: consts.screenH / 2,

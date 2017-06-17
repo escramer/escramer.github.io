@@ -1,3 +1,5 @@
+// Constants
+
 var consts = {
   ballSpeed: 700,
   ballR: 10,
