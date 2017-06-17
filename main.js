@@ -331,8 +331,14 @@ function World() {
 
   // Update the paddles.
   this._updatePaddles = function() {
-    this._updateMyPaddle();
-    this._updateOppPaddle();
+    var dt = this._dtTrackter.getDT();
+    var myState = this._myWorldState();
+    var oppState = this._oppWorldState();
+    var myDir = this._getKBDir();
+    var oppDir = this._nn.predict(oppState);
+    this._myPaddle.update(myDir, dt);
+    this._oppPaddle.update(oppDir, dt);
+    this._nn.fit(myState, myDir);
   }
 
   // Update the opponent paddle.
@@ -457,6 +463,9 @@ function World() {
   this._oppPaddle = new Paddle(true);
   this._dtTracker = new DTTracker();
   this._ball = new Ball();
+
+  //todo: Use this._myWorldState() to get the number of inputs.
+  this._nn = new NeuralNetwork(12, 3);
 }
 
 // Do initializations here.
