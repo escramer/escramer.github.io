@@ -271,6 +271,59 @@ function World() {
     }
   }
 
+  /* Return an array of features describing my world state.
+
+  Features:
+  countdown
+  ballX
+  ballY
+  ballVX
+  ballVY
+  myScore
+  oppScore
+  myPaddleY
+  myPaddleMotion (up, stop, down)
+  time spent in myPaddleMotion
+  oppPaddleY
+  oppPaddleMotion
+  */
+  this._myWorldState = function() {
+    return [
+      this._countdown,
+      this._ball.getX(),
+      this._ball.getY(),
+      this._ball.getVX(),
+      this._ball.getVY(),
+      this._myScore,
+      this._oppScore,
+      this._myPaddle.getY(),
+      this._myPaddle.getCrntDir(),
+      this._myPaddle.getTimeInDir(),
+      this._oppPaddle.getY(),
+      this._oppPaddle.getCrntDir()
+    ];
+  }
+
+  /* Return an array of features describing the opponent's world state. See
+  this._myWorldState for the features that are returned.
+  */
+  this._oppWorldState = function() {
+    return [
+      this._countdown,
+      consts.screenW - this._ball.getX(),
+      this._ball.getY(),
+      -this._ball.getVX(),
+      this._ball.getVY(),
+      this._oppScore,
+      this._myScore,
+      this._oppPaddle.getY(),
+      this._oppPaddle.getCrntDir(),
+      this._oppPaddle.getTimeInDir(),
+      this._myPaddle.getY(),
+      this._myPaddle.getCrntDir()
+    ];
+  }
+
   // Reset to a new game (by first going between games).
   this._newGame = function() {
     this._resetScores();
