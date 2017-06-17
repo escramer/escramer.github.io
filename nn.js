@@ -9,14 +9,14 @@ the number of hidden units in the ith hidden layer.
 function NeuralNetwork(numInputs, numOutputs, hiddenUnits=100) {
   /* Fit this neural network to this single training example.
 
-  input is a one-dimensional matrix. output is an integer from 0 to (numOutputs
+  input is an array. output is an integer from 0 to (numOutputs
   - 1).
   */
   this.fit = function(input, output) {
     ;//todo
   }
 
-  // Predict the output. input is a one-dimensional matrix.
+  // Predict the output. input is an array.
   this.predict = function(input) {
     return 0; //todo
   }
