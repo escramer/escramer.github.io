@@ -21,7 +21,7 @@ function NeuralNetwork(numInputs, numOutputs, hiddenUnits=100) {
     return 0; //todo
   }
 
-  if (typof hiddenUnits === 'number') {
+  if (typeof hiddenUnits === 'number') {
     hiddenUnits = [hiddenUnits];
   }
   //todo
