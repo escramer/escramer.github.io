@@ -331,7 +331,7 @@ function World() {
 
   // Update the paddles.
   this._updatePaddles = function() {
-    var dt = this._dtTrackter.getDT();
+    var dt = this._dtTracker.getDT();
     var myState = this._myWorldState();
     var oppState = this._oppWorldState();
     var myDir = this._getKBDir();
