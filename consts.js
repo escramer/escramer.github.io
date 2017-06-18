@@ -15,4 +15,4 @@ var consts = {
   winningScore: 10,
   up: 'k',
   down: 'm'
-}
+};
